@@ -125,42 +125,42 @@
 
 				//if icon is clear sky
 				if (defaultIconFileName == '01d' || defaultIconFileName == '01n') {
-					var iconURL = '01.png';
+					var iconURL = 'images/icons/01.png';
 				}
 
 				//if icon is clouds || broken clouds
 				if (defaultIconFileName == '02d' || defaultIconFileName == '02n' || defaultIconFileName == '04d' || defaultIconFileName == '04n') {
-					var iconURL = '02.png';
+					var iconURL = 'images/icons/02.png';
 				}
 
 				//if icon is scattered
 				if (defaultIconFileName == '03d' || defaultIconFileName == '03n') {
-					var iconURL = '03.png';
+					var iconURL = 'images/icons/03.png';
 				}
 
 				//if icon is light rain
 				if (defaultIconFileName == '09d' || defaultIconFileName == '09n') {
-					var iconURL = '10.png';
+					var iconURL = 'images/icons/10.png';
 				}
 
 				//if icon is rain
 				if (defaultIconFileName === '10d' || defaultIconFileName === '10n') {
-					var iconURL = '10.png';
+					var iconURL = 'images/icons/10.png';
 				}
 
 				//if icon is thunderstorm
 				if (defaultIconFileName == '11d' || defaultIconFileName == '11n') {
-					var iconURL = '11.png';
+					var iconURL = 'images/icons/11.png';
 				}
 
 				//if icon is snow
 				if (defaultIconFileName == '13d' || defaultIconFileName == '13n') {
-					var iconURL = '13.png';
+					var iconURL = 'images/icons/13.png';
 				}
 
 				//if icon is mist
 				if (defaultIconFileName == '50d' || defaultIconFileName == '50n') {
-					var iconURL = '50.png';
+					var iconURL = 'images/icons/50.png';
 				}
 
 				//set iconTarget src attribute as iconURL
