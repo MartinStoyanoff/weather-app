@@ -44,7 +44,7 @@
 		var s = plugin.settings;
 
 		//define basic api endpoint
-		apiURL = 'http://api.openweathermap.org/data/2.5/weather?lang=' + s.lang;
+		apiURL = 'https://api.openweathermap.org/data/2.5/weather?lang=' + s.lang;
 
 		//if city isn't null
 		if (s.city != null) {
