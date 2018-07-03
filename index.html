@@ -18,11 +18,15 @@
     <link href='//fonts.googleapis.com/css?family=Raleway:100,200' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="JavaScript/openWeather.js"></script>
+    <script src="JavaScript/time.js"></script>
+    <script src="JavaScript/search.js"></script>
+    <script src="JavaScript/autoComplete.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjHZN38teciKxXYMkpeqfvitLhHfcxNqQ&libraries=places&callback=activatePlacesSearch"></script>
 
 
 </head>
-<!--Head-->
 
+<!--Head-->
 
 <body onload="startTime()">
 
@@ -43,24 +47,8 @@
             <div class="date-time">
                 <div class="dmy">
                     <div id="txt"></div>
-                    <div class="date">
-
-                        <!-- Date-JavaScript -->
-                        <script type="text/javascript">
-                            var mydate = new Date()
-                            var year = mydate.getYear()
-                            if (year < 1000)
-                                year += 1900
-                            var day = mydate.getDay()
-                            var month = mydate.getMonth()
-                            var daym = mydate.getDate()
-                            // if (daym < 10)
-                            //     day = "0" + daym
-                            var dayarray = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
-                            var montharray = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
-                            document.write("" + dayarray[day] + ", " + montharray[month] + " " + daym + ", " +  year + "")
-                        </script>
-                        <!-- //Date-JavaScript -->
+                    <div class="date" id="date">
+                        <script src="JavaScript/date.js"></script>
                     </div>
                 </div>
                 <div class="temperature">
@@ -94,7 +82,6 @@
                     <li>Pressure
                         <span class="weather-pressure"></span>
                     </li>
-
                     <li>Wind speed
                         <span class="weather-wind-speed"></span>
                     </li>
@@ -112,7 +99,6 @@
     </div>
     <!-- //Container -->
 
-
     <!-- Footer -->
     <div class="footer">
         <div class="copyright">
@@ -123,78 +109,7 @@
     </div>
     <!-- //Footer -->
 
-    <script>
-        function startTime() {
-            var today = new Date();
-            var h = today.getHours();
-            var m = today.getMinutes();
-            var s = today.getSeconds();
-            m = checkTime(m);
-            s = checkTime(s);
-            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
-            var t = setTimeout(startTime, 500);
-        }
 
-        function checkTime(i) {
-            if (i < 10) {
-                i = "0" + i
-            };
-            return i;
-        }
-    </script>
-    <!-- //Time-JavaScript -->
-
-    <!-- //Custom-JavaScript-File-Links -->
-
-
-    <script>
-        $(document).ready(function () {
-            var city = $("#city").val();
-
-            open_weather(city);
-        });
-        $(document).ready(function () {
-            $('#city').bind('keyup blur', function () {
-                var node = $(this);
-                node.val(node.val());
-            });
-            $("#clk").click(function () {
-                var city = $("#city").val();
-                //alert(city);
-                open_weather(city);
-            });
-
-
-
-        });
-
-        function open_weather(city) {
-
-            $('.weather-temperature').openWeather({
-                key: '13637fc49e69ecb7364b52deebe17422',
-                city: city,
-                descriptionTarget: '.weather-description',
-                windSpeedTarget: '.weather-wind-speed',
-                pressureTarget: '.weather-pressure',
-                humidityTarget: '.weather-humidity',
-                sunriseTarget: '.weather-sunrise',
-                cloudsTarget: '.weather-clouds',
-                sunsetTarget: '.weather-sunset',
-                placeTarget: '.weather-place',
-                iconTarget: '.icon-target',
-                success: function () {
-                    //show weather
-                    $('.weather-wrapper').fadeIn(800);
-
-                },
-                error: function (message) {
-                    console.log(message);
-                    $('.weather-wrapper').fadeOut(1000)
-                    alert("Enter City Name Properly.");
-                }
-            });
-        }
-    </script>
     <script>
         var input = document.getElementById("city");
         input.addEventListener("keyup", function (event) {
@@ -204,15 +119,6 @@
             }
         });
     </script>
-    <script>
-        function activatePlacesSearch() {
-            var input = document.getElementById('city');
-            var autocomplete = new google.maps.places.Autocomplete(input);
-        }
-    </script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjHZN38teciKxXYMkpeqfvitLhHfcxNqQ&libraries=places&callback=activatePlacesSearch"></script>
-
-
 </body>
 
 </html>
