@@ -541,6 +541,7 @@ span .temperature{
 	}
 	div#txt {
 		font-size: 30px;
+		text-align: center;
 	}
 	.date {
 		font-size: 22px;
