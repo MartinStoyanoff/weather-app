@@ -32,7 +32,6 @@ function open_weather(city) {
         placeTarget: '.weather-place',
         iconTarget: '.icon-target',
         success: function () {
-            //show weather
             $('.weather-wrapper').fadeIn(800);
 
         },
