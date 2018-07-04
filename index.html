@@ -20,8 +20,7 @@
     <script src="JavaScript/openWeather.js"></script>
     <script src="JavaScript/time.js"></script>
     <script src="JavaScript/search.js"></script>
-    <script src="JavaScript/autoComplete.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjHZN38teciKxXYMkpeqfvitLhHfcxNqQ&libraries=places&callback=activatePlacesSearch"></script>
+    <!-- <script src="JavaScript/autoComplete.js"></script> -->
 
 
 </head>
@@ -119,6 +118,14 @@
             }
         });
     </script>
+    
+    <script>
+        function activatePlacesSearch() {
+            var input = document.getElementById('city');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjHZN38teciKxXYMkpeqfvitLhHfcxNqQ&libraries=places&callback=activatePlacesSearch"></script>
 </body>
 
 </html>
