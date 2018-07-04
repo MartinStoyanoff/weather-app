@@ -118,10 +118,8 @@
 				//set weather description
 				$(s.descriptionTarget).text(data.weather[0].description);
 
-
 				//define the default icon name
 				var defaultIconFileName = data.weather[0].icon;
-
 
 				//if icon is clear sky
 				if (defaultIconFileName == '01d' || defaultIconFileName == '01n') {
@@ -165,7 +163,6 @@
 
 				//set iconTarget src attribute as iconURL
 				$(s.iconTarget).attr('src', iconURL);
-
 
 				//if placeTarget isn't null
 				if (s.placeTarget != null) {
