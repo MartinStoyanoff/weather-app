@@ -10,7 +10,6 @@ $(document).ready(function () {
     });
     $("#clk").on('click',function () {
         var city = $("#city").val();
-        //alert(city);
         open_weather(city);
     });
 
