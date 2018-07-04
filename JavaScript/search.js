@@ -8,7 +8,7 @@ $(document).ready(function () {
         var node = $(this);
         node.val(node.val());
     });
-    $("#clk").click(function () {
+    $("#clk").on('click',function () {
         var city = $("#city").val();
         //alert(city);
         open_weather(city);
