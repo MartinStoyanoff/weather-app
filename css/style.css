@@ -275,6 +275,7 @@ div#txt{
 }
 
 .temperature p:hover{
+	font-weight: 300;
 	color: rgb(28, 194, 194);
 }
 
